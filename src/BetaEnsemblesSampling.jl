@@ -1,5 +1,7 @@
 module BetaEnsemblesSampling
 
+using Random, Distributions, LinearAlgebra
+
 include("GLJ_tridiagonal.jl")
 
 export GUE_eval_samples, LUE_eval_samples, JUE_eval_samples
