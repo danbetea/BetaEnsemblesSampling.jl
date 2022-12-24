@@ -10,7 +10,7 @@ $$P(\lambda_1, \dots, \lambda_N)d \lambda_1 \dots d \lambda_N \propto \prod_{1 \
 
 - Laguerre Beta Ensemble with probability distribution
 
-$$P(\lambda_1, \dots, \lambda_N)d \lambda_1 \dots d \lambda_N \propto \prod_{1 \leq i < j \leq N} |\lambda_i - \lambda_j|^\beta \prod_{1 \leq i \leq N} \lambda_i^{\alpha-1} e^{-\lambda_i} d \lambda_i$$
+$$P(\lambda_1, \dots, \lambda_N)d \lambda_1 \dots d \lambda_N \propto \prod_{1 \leq i < j \leq N} |\lambda_i - \lambda_j|^\beta \prod_{1 \leq i \leq N} \lambda_i^{\alpha-1} e^{-\lambda_i/\theta} d \lambda_i$$
 
 - Jacobi Beta Ensemble with probability distribution
 
