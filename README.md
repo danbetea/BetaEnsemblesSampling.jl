@@ -28,8 +28,15 @@ It uses ```LinearAlgebra```, ```Random```, and ```Distributions```
 
 ## References
 
+### Relevant references for the algorithms used
+
 - Dumitriu, Edelman, *Matrix models for beta ensembles*, [arXiv link](https://arxiv.org/pdf/math-ph/0206043.pdf)
 - Gautier, Bardenet, Valko, *Fast sampling from beta ensembles*, [arXiv link](https://arxiv.org/pdf/2003.02344.pdf)
 - Killip, Nenciu, *Matrix models for circular ensembles*, [arXiv link](https://arxiv.org/pdf/math/0410034.pdf)
+
+### Relevant references on random matrix theory
+
+- Anderson, Guionnet, Zeitouni, *An introduction to random matrices*, [link to PDF](https://www.wisdom.weizmann.ac.il/~zeitouni/cupbook.pdf)
+- Edelman, *Eigenvalues and condition numbers of random matrices*, PhD thesis, [link to PDF](https://math.mit.edu/~edelman/publications/eigenvalues_and_condition_numbers.pdf)
 
 
