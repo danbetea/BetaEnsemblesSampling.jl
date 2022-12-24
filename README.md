@@ -16,7 +16,7 @@ $$P(\lambda_1, \dots, \lambda_N)d \lambda_1 \dots d \lambda_N \propto \prod_{1 \
 
 $$P(\lambda_1, \dots, \lambda_N)d \lambda_1 \dots d \lambda_N \propto \prod_{1 \leq i < j \leq N} |\lambda_i - \lambda_j|^\beta \prod_{1 \leq i \leq N} \lambda_i^{a-1} (1-\lambda_i)^{b-1}  d \lambda_i$$
 
-For generic $beta$ these distributions are abbreviated G$\beta$E, L$\beta$E, and J$\beta$E respectively. For $\beta = 1, 2, 4$ they are known as G/L/JOE, G/L/JUE, G/L/JSE, where O stantds for orthogonal, U for unitary, and S for symplectic.
+For generic $\beta$ these distributions are abbreviated $G \beta E$, $L \beta E$, and $J \beta E$ respectively. For $\beta = 1, 2, 4$ they are known as $G/L/JOE$, $G/L/JUE$, $G/L/JSE$, where O stantds for orthogonal, U for unitary, and S for symplectic.
 
 ## Method
 
