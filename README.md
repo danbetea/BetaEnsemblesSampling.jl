@@ -66,5 +66,6 @@ The Python package [DPPy](https://github.com/guilgautier/DPPy) was originally im
 
 - Anderson, Guionnet, Zeitouni, *An introduction to random matrices*, [link to PDF](https://www.wisdom.weizmann.ac.il/~zeitouni/cupbook.pdf)
 - Edelman, *Eigenvalues and condition numbers of random matrices*, PhD thesis, [link to PDF](https://math.mit.edu/~edelman/publications/eigenvalues_and_condition_numbers.pdf)
+- Livan, Novaes, Vivo, *An introduction to random matrices - theory and practice*, [arXiv link](https://arxiv.org/abs/1712.07903)
 
 
