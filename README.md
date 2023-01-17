@@ -40,7 +40,14 @@ Each of the ```num_samples``` rows of ```Lambda``` is an iid sample containing t
 
 ## Idea
 
-While other packages providing similar functionality exist (see below), the idea was to provide a package that is: a) focused solely on sampling for researchers who want to experiment with classical random matrix models, b) fast, c) easy to use, d) easy to read, e) easy to modify for users unfamiliar with Julia, and d) useful for batch sampling for situations in which taking a large number of iid samples (to compute expectations/moments) might be needed.
+While other packages providing similar functionality exist (see below), the idea is to provide a package that is: 
+
+- focused solely on sampling for researchers who want to experiment with classical random matrix models;
+- fast;
+- easy to use;
+- easy to read;
+- easy to modify for users unfamiliar with Julia;
+- useful for batch sampling for situations in which taking a large number of iid samples (e.g. to compute expectations) might be needed.
 
 ## Method 
 
