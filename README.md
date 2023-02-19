@@ -30,14 +30,14 @@ with $\alpha, \theta, \beta > 0.$
 $0 < \lambda_1 < \dots < \lambda_N < 1$
 
 $$P(\lambda_1, \dots, \lambda_N)d \lambda_1 \dots d \lambda_N \propto
-\prod_{1 \leq i < j \leq N} |\lambda_i - \lambda_j|^\beta 
+\prod_{1 \leq i < j \leq N} |\lambda_i - \lambda_j|^\beta
 \prod_{1 \leq i \leq N} \lambda_i^{a-1} (1-\lambda_i)^{b-1}  d \lambda_i$$
 
   with $a, b, \beta > 0.$
 
 For generic $\beta$ these distributions are abbreviated $G \beta E$,
 $L \beta E$, and $J \beta E$ respectively. For $\beta = 1, 2, 4$ they are known
- as $G/L/JOE$, $G/L/JUE$, $G/L/JSE$, where O stantds for orthogonal,
+ as $G/L/JOE$, $G/L/JUE$, $G/L/JSE$, where O stands for orthogonal,
  U for unitary, and S for symplectic.
 
 ## Usage
@@ -47,13 +47,9 @@ above for matrix size ```N = 1000```, and take only the smallest ordered
 ```num_taken = 100``` eigenvalues, for ```beta = 4```, ```alpha = 2.5```,
 ```theta = 1``` (from the LSE ensemble), you would do:
 
-```    
-Lambda = LbetaE_eval_samples(N, num_taken, alpha, theta, beta, num_samples)
-```
+`Lambda = LbetaE_eval_samples(N, num_taken, alpha, theta, beta, num_samples)`
 or
-```
-Lambda = LbetaE_eval_samples(1000, 100, 2.5, 1.0, 4.0, 10000)
-```
+`Lambda = LbetaE_eval_samples(1000, 100, 2.5, 1.0, 4.0, 10000)`
 
 Each of the ```num_samples``` rows of ```Lambda``` is an iid sample containing
 the first 100 eigenvalues.
@@ -77,7 +73,7 @@ While other packages providing similar functionality exist (see below), the
 The sampling is done using the tridiagonal method of Dumitriu--Edelman and
  Killip--Nenciu, following the paper by Gautier--Bardenet--Valko
  (namely the conventions and notation of Thm 2.1, 2.2, and 2.3 of the latter).
- See the references for links. 
+ See the references for links.
 
 ## Dependencies
 
@@ -100,5 +96,3 @@ The Python package [DPPy](https://github.com/guilgautier/DPPy) was originally im
 - Anderson, Guionnet, Zeitouni, *An introduction to random matrices*, [link to PDF](https://www.wisdom.weizmann.ac.il/~zeitouni/cupbook.pdf)
 - Edelman, *Eigenvalues and condition numbers of random matrices*, PhD thesis, [link to PDF](https://math.mit.edu/~edelman/publications/eigenvalues_and_condition_numbers.pdf)
 - Livan, Novaes, Vivo, *An introduction to random matrices - theory and practice*, [arXiv link](https://arxiv.org/abs/1712.07903)
-
-
