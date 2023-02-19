@@ -48,7 +48,9 @@ above for matrix size ```N = 1000```, and take only the smallest ordered
 ```theta = 1``` (from the LSE ensemble), you would do:
 
 `Lambda = LbetaE_eval_samples(N, num_taken, alpha, theta, beta, num_samples)`
+
 or
+
 `Lambda = LbetaE_eval_samples(1000, 100, 2.5, 1.0, 4.0, 10000)`
 
 Each of the ```num_samples``` rows of ```Lambda``` is an iid sample containing
@@ -77,22 +79,33 @@ The sampling is done using the tridiagonal method of Dumitriu--Edelman and
 
 ## Dependencies
 
-It uses ```LinearAlgebra```, ```Random```, and ```Distributions```
+It uses `LinearAlgebra`, `Random`, and `Distributions`.
 
 ## Other similar packages
 
-The Python package [DPPy](https://github.com/guilgautier/DPPy) was originally implemented by Gautier--Bardenet--Valko as a companion to their paper referenced below. The [RandomMatrices.jl](https://github.com/JuliaMath/RandomMatrices.jl) implements some of the same functionality as well.
+The Python package [DPPy](https://github.com/guilgautier/DPPy) was originally
+implemented by Gautier--Bardenet--Valko as a companion to their paper
+referenced below.
+
+The [RandomMatrices.jl](https://github.com/JuliaMath/RandomMatrices.jl)
+implements some of the same functionality as well.
 
 ## References
 
 ### Relevant references for the algorithms used
 
-- Dumitriu, Edelman, *Matrix models for beta ensembles*, [arXiv link](https://arxiv.org/pdf/math-ph/0206043.pdf)
-- Gautier, Bardenet, Valko, *Fast sampling from beta ensembles*, [arXiv link](https://arxiv.org/pdf/2003.02344.pdf)
-- Killip, Nenciu, *Matrix models for circular ensembles*, [arXiv link](https://arxiv.org/pdf/math/0410034.pdf)
+- Dumitriu, Edelman, *Matrix models for beta ensembles*,
+[arXiv link](https://arxiv.org/pdf/math-ph/0206043.pdf)
+- Gautier, Bardenet, Valko, *Fast sampling from beta ensembles*,
+[arXiv link](https://arxiv.org/pdf/2003.02344.pdf)
+- Killip, Nenciu, *Matrix models for circular ensembles*,
+[arXiv link](https://arxiv.org/pdf/math/0410034.pdf)
 
 ### Relevant references on random matrix theory
 
-- Anderson, Guionnet, Zeitouni, *An introduction to random matrices*, [link to PDF](https://www.wisdom.weizmann.ac.il/~zeitouni/cupbook.pdf)
-- Edelman, *Eigenvalues and condition numbers of random matrices*, PhD thesis, [link to PDF](https://math.mit.edu/~edelman/publications/eigenvalues_and_condition_numbers.pdf)
-- Livan, Novaes, Vivo, *An introduction to random matrices - theory and practice*, [arXiv link](https://arxiv.org/abs/1712.07903)
+- Anderson, Guionnet, Zeitouni, *An introduction to random matrices*,
+[link to PDF](https://www.wisdom.weizmann.ac.il/~zeitouni/cupbook.pdf)
+- Edelman, *Eigenvalues and condition numbers of random matrices*, PhD thesis,
+[link to PDF](https://math.mit.edu/~edelman/publications/eigenvalues_and_condition_numbers.pdf)
+- Livan, Novaes, Vivo, *An introduction to random matrices - theory and practice*,
+[arXiv link](https://arxiv.org/abs/1712.07903)
