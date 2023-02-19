@@ -2,31 +2,50 @@
 
 ## Introduction
 
-This Julia package provides methods to sample iid (independent and identically distributed) eigenvalues from the classical $\beta$ (beta) ensembles of random matrix theory (RMT). The parameter $\beta > 0$ plays the role of inverse temperature. So far the following multivariate eigenvalue distributions on $N$ ordered tuples $(\lambda_1, \dots, \lambda_N)$ are supported:
+This Julia package provides methods to sample iid (independent and identically
+distributed) eigenvalues from the classical $\beta$ (beta) ensembles of random
+matrix theory (RMT). The parameter $\beta > 0$ plays the role of inverse
+temperature. So far the following multivariate eigenvalue distributions on $N$
+ordered tuples $(\lambda_1, \dots, \lambda_N)$ are supported:
 
-- Gaussian Beta Ensemble with probability distribution on $-\infty < \lambda_1 < \dots < \lambda_N < \infty$
+- Gaussian Beta Ensemble with probability distribution on
+$-\infty < \lambda_1 < \dots < \lambda_N < \infty$
 
-$$P(\lambda_1, \dots, \lambda_N)d \lambda_1 \dots d \lambda_N \propto \prod_{1 \leq i < j \leq N} |\lambda_i - \lambda_j|^\beta \prod_{1 \leq i \leq N} e^{-\frac{(\lambda_i - \mu)^2}{2 \sigma^2}}  d \lambda_i$$
+$$P(\lambda_1, \dots, \lambda_N)d \lambda_1 \dots d \lambda_N \propto
+\prod_{1 \leq i < j \leq N} |\lambda_i - \lambda_j|^\beta
+\prod_{1 \leq i \leq N} e^{-\frac{(\lambda_i-\mu)^2}{2 \sigma^2}} d \lambda_i$$
 
-  with $\mu$ real and $\sigma, \beta > 0.$
+with $\mu$ real and $\sigma, \beta > 0.$
 
-- Laguerre Beta Ensemble with probability distribution on $0 < \lambda_1 < \dots < \lambda_N < \infty$
+- Laguerre Beta Ensemble with probability distribution on
+$0 < \lambda_1 < \dots < \lambda_N < \infty$
 
-$$P(\lambda_1, \dots, \lambda_N)d \lambda_1 \dots d \lambda_N \propto \prod_{1 \leq i < j \leq N} |\lambda_i - \lambda_j|^\beta \prod_{1 \leq i \leq N} \lambda_i^{\alpha-1} e^{-\lambda_i/\theta} d \lambda_i$$
+$$P(\lambda_1, \dots, \lambda_N)d \lambda_1 \dots d \lambda_N \propto
+\prod_{1 \leq i < j \leq N} |\lambda_i - \lambda_j|^\beta
+\prod_{1 \leq i \leq N} \lambda_i^{\alpha-1} e^{-\lambda_i/\theta} d \lambda_i$$
 
-  with $\alpha, \theta, \beta > 0.$
+with $\alpha, \theta, \beta > 0.$
 
-- Jacobi Beta Ensemble with probability distribution on $0 < \lambda_1 < \dots < \lambda_N < 1$
+- Jacobi Beta Ensemble with probability distribution on
+$0 < \lambda_1 < \dots < \lambda_N < 1$
 
-$$P(\lambda_1, \dots, \lambda_N)d \lambda_1 \dots d \lambda_N \propto \prod_{1 \leq i < j \leq N} |\lambda_i - \lambda_j|^\beta \prod_{1 \leq i \leq N} \lambda_i^{a-1} (1-\lambda_i)^{b-1}  d \lambda_i$$
+$$P(\lambda_1, \dots, \lambda_N)d \lambda_1 \dots d \lambda_N \propto
+\prod_{1 \leq i < j \leq N} |\lambda_i - \lambda_j|^\beta 
+\prod_{1 \leq i \leq N} \lambda_i^{a-1} (1-\lambda_i)^{b-1}  d \lambda_i$$
 
   with $a, b, \beta > 0.$
 
-For generic $\beta$ these distributions are abbreviated $G \beta E$, $L \beta E$, and $J \beta E$ respectively. For $\beta = 1, 2, 4$ they are known as $G/L/JOE$, $G/L/JUE$, $G/L/JSE$, where O stantds for orthogonal, U for unitary, and S for symplectic.
+For generic $\beta$ these distributions are abbreviated $G \beta E$,
+$L \beta E$, and $J \beta E$ respectively. For $\beta = 1, 2, 4$ they are known
+ as $G/L/JOE$, $G/L/JUE$, $G/L/JSE$, where O stantds for orthogonal,
+ U for unitary, and S for symplectic.
 
 ## Usage
 
-To sample ```num_samples = 10000``` iid samples from the Laguerre Beta Ensemble above for matrix size ```N = 1000```, and take only the smallest ordered ```num_taken = 100``` eigenvalues, for ```beta = 4```, ```alpha = 2.5```, ```theta = 1``` (from the LSE ensemble), you would do:
+To sample ```num_samples = 10000``` iid samples from the Laguerre Beta Ensemble
+above for matrix size ```N = 1000```, and take only the smallest ordered
+```num_taken = 100``` eigenvalues, for ```beta = 4```, ```alpha = 2.5```,
+```theta = 1``` (from the LSE ensemble), you would do:
 
 ```    
 Lambda = LbetaE_eval_samples(N, num_taken, alpha, theta, beta, num_samples)
@@ -36,26 +55,33 @@ or
 Lambda = LbetaE_eval_samples(1000, 100, 2.5, 1.0, 4.0, 10000)
 ```
 
-Each of the ```num_samples``` rows of ```Lambda``` is an iid sample containing the first 100 eigenvalues.
+Each of the ```num_samples``` rows of ```Lambda``` is an iid sample containing
+the first 100 eigenvalues.
 
 ## Idea
 
-While other packages providing similar functionality exist (see below), the idea is to provide a package that is: 
+While other packages providing similar functionality exist (see below), the
+ idea is to provide a package that is:
 
-- focused solely on sampling for researchers who want to experiment with classical random matrix models;
+- focused solely on sampling for researchers who want to experiment with
+ classical random matrix models;
 - fast;
 - easy to use;
 - easy to read;
 - easy to modify for users unfamiliar with Julia;
-- useful for batch sampling for situations in which taking a large number of iid samples (e.g. to compute expectations) might be needed.
+- useful for batch sampling for situations in which taking a large number of iid
+ samples (e.g. to compute expectations) might be needed.
 
-## Method 
+## Method
 
-The sampling is done using the tridiagonal method of Dumitriu--Edelman and Killip--Nenciu, following the paper by Gautier--Bardenet--Valko (namely the conventions and notation of Theorems 2.1, 2.2, and 2.3 of the latter). See the references for links. 
+The sampling is done using the tridiagonal method of Dumitriu--Edelman and
+ Killip--Nenciu, following the paper by Gautier--Bardenet--Valko
+ (namely the conventions and notation of Thm 2.1, 2.2, and 2.3 of the latter).
+ See the references for links. 
 
 ## Dependencies
 
-It uses ```LinearAlgebra```, ```Random```, and ```Distributions``` 
+It uses ```LinearAlgebra```, ```Random```, and ```Distributions```
 
 ## Other similar packages
 
